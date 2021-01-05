@@ -1,7 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="shortcut icon" href="./images/thefair_logo.png">
+	<title>CONE示人</title>
+	<link rel="stylesheet" href="./css/swiper.min.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="icon" href="./images/thefair_logo.png" type="image/x-icon">
+	<link rel="shortcut icon" href="./images/thefair_logo.png" type="image/x-icon">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<div class="container">
+		<div class="header-area">
+			<div class="nav-bar">
+				<a class="logo-icon" href="./index.html"></a>
+				<div class="menu-bar">
+					<ul>
+						<li>
+							<a href="javascript:void(0);" onclick="link(this,1);">我的信息</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" onclick="link(this,2);">我的作品</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- 滑轨一 -->
+				<div class="swiper-slide page-item page-item-0">
+					<div class="video-box">
+						<div class="slide-next-white"></div>
+						<div class="video-cover">
+							<i class="icon-5"></i>
+						</div>
+					</div>
+				</div>
+				<!-- 滑轨二 -->
+				<div class="swiper-slide page-item page-item-1">
+					<div class="slide-pre"></div>
+					<div class="slide-next-black"></div>
+					<div class="text-line"></div>
+					<div class="text1-contents">
+						<div class="text1-content1">
+							<article>
+								联系方式：<br>
+								电话 - 18740323402<br>
+								微信 - Killitlei<br>
+								邮箱 - 1591737466@qq.com
+							</article>
+						</div>
+						<div class="text1-content2">
+							<article>
+								现就职于西安大唐芙蓉园景区<br>
+								从事平面设计、VIS设计、策划案包装、文案撰写等工作<br>
+								曾协助拍摄浙江卫视《青春环游记》、优酷影视《我是唐朝人》<br>
+								评获“黄金周最美微笑大使”、连续“两年年度先进个人”<br>
+							</article>
+							<strong>或许这个世界的一切，皆可设计。</strong>
+						</div>
+						<div class="text1-content3	">
+							<div class="qr-code">
+                                <img src="./images/qrcode.png">
+                            </div>
+							<span>扫码关注<br />我的公众号：CONE示人</span>
+						</div>
+					</div>
+					<div class="image-cover"></div>
+				</div>
+				<!-- 滑轨三 -->
+				<div class="swiper-slide page-item page-item-2">
+					<div class="slide-pre"></div>
+					<div class="text2-contents">
+						<div class="text2-content1">
+							<strong class="punctuation"></strong>
+							<article><strong>设计其实只是给我们提出了一个问题，而我们只需要给它一个解题思路
+								<br>它便会主动返还给我们无数的答案。”</strong></article>
+							<span>—— 记于Bilibili 20年9月7日</span>
+						</div>
+						<div class="text2-content2">
+							<article>如果你同意我的浅显之作占用你一点宝贵的时间，拥有一点耐心看完它吧！</article>
+							<article><a style="color: #b69608;" href="https://app.mokahr.com/apply/xinshixiang/4607">2021，即将上新</a></article>
+						</div>
+					</div>
+					<div class="image-cover"></div>
+
+					<div class="footer-area">
+						<div class="copy-right">
+							<section>© 2017－2021 CONE示人, all rights reserved</section>
+				            <section>不要被挑选，而是被需要 &nbsp;&nbsp;&nbsp;</section>
+				            <section>
+				            	<a style="color: #808080;text-decoration: none;"  href="https://weibo.com/u/3230627952">Weibo </a>
+				            </section>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="video">
+				<video muted src="./images/lang.mp4" loop="loop" autoplay="autoplay" webkit-playsinline="true" playsinline="true" x-webkit-airplay="true"
+			    playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="true" >
+			   		<source src="./images/lang.mp4">	
+				</video>	
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+				
+	</div>
+
+
+	<script src="./js/jquery-2.1.1.js"></script>
+	<script>
+
+	</script>
+	<script src="./js/swiper-3.4.2.jquery.min.js"></script>
+
+	<script>
+		$(function() {
+            var isWechat = navigator.userAgent.toLowerCase().match(/micromessenger/);
+            if(isWechat){
+                $('.header-area').height(0);
+            }
+            $('.container').css({
+                'opacity':1
+            })
+
+
+            /*初始化滑轨*/
+            function init() {
+                var height = $(window).height();
+                var menuHeight = $('.header-area').height();
+                $('.swiper-container').css({
+                    'width': "100%",
+                    'height': height - menuHeight+'px'
+                });
+                $('.video-cover').addClass('animate2');
+            }
+
+            init();
+
+			/*根据屏幕大小更改轮播图高度*/		
+			/*动态更改menuBar的右边距*/
+			$(window).resize(function() {
+				var distance = $('.text1-content3').width() - 140;
+				$('.menu-bar').css("padding-right",72-(124-distance));
+				var height = $(window).height();
+				var menuHeight = $('.header-area').height();
+				$('.swiper-container').css("height",height - menuHeight);
+			})
+
+			/*图片轮播*/
+			var pageIndex = parseInt(location.hash.replace(/#/, ''));
+	         if (isNaN(pageIndex)) {
+	             pageIndex = 0;
+	        }
+
+	    	var swiper = new Swiper('.swiper-container', {
+	                initialSlide: pageIndex,
+	                pagination: '.swiper-pagination',
+	                paginationClickable: true,
+	                direction: 'vertical',
+	                longSwipesRatio: 0.1,
+	                mousewheelControl: true,
+	                mousewheelForceToAxis: true,
+	                mousewheelReleaseOnEdges: true,
+	                mousewheelInvert: true,
+	                onSlideChangeStart: function (swiper) {
+	                    slideChangeStartCallback(swiper);
+	                }
+	        });
+
+	        $('.slide-pre').each(function() {
+	        	$(this).click(function() {
+	        		swiper.slidePrev(false,800);
+	        		slideChangeStartCallback(swiper);
+	        	});
+	        	
+	        });
+
+	        $('.slide-next-white').click(function() {
+	        	swiper.slideNext(false,800);
+				slideChangeStartCallback(swiper);
+	        })
+
+			$('.slide-next-black').each(function() {
+				$(this).click(function() {
+					swiper.slideNext(false,800);
+					slideChangeStartCallback(swiper);
+				});
+				
+	        });
+
+	        function slideChangeStartCallback(swiper) {
+	            var index = swiper.activeIndex;
+	            var lastIndex = swiper.previousIndex;
+	           
+
+	            $('.page-item.animate').removeClass('animate');
+	            $($('.page-item')[index]).addClass('animate');
+	        
+	            $('.menu-bar li a').each(function() {
+			        $(this).removeClass('active');
+			    });
+	            
+	            if(index==1 || index==2){
+	            	$('.swiper-pagination-bullet-active').css('background','#000');
+	            }
+	        }
+
+
+	    });
+
+	     /*menuBar页面链接跳转*/
+		 function link(obj,num) {
+		    $('.swiper-pagination span').eq(num).trigger('click');
+		    $('.menu-bar li a').each(function() {
+		        $(this).removeClass('active');
+		    });
+		    $(obj).addClass('active');
+		}
+
+
+        function autoPlay() {
+            document.getElementsByTagName('video')[0].play();
+        }
+
+        autoPlay();
+        document.addEventListener("WeixinJSBridgeReady", autoPlay, false);
+		
+	   
+	</script>
+	
+
+
 </body>
 </html>
